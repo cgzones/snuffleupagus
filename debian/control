@@ -11,7 +11,7 @@ Vcs-Git: https://github.com/jvoisin/snuffleupagus.git
 
 Package: snuffleupagus
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}
 Description: Security module for php7 and php8
  Snuffleupagus is a PHP 7+ and 8+ module designed to drastically raise the
  cost of attacks against websites, by killing entire bug classes. It also
