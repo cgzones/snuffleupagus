@@ -9,7 +9,7 @@ Section: php
 Vcs-Browser: https://github.com/jvoisin/snuffleupagus
 Vcs-Git: https://github.com/jvoisin/snuffleupagus.git
 
-Package: snuffleupagus
+Package: php-snuffleupagus
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}
 Description: Security module for php7 and php8
