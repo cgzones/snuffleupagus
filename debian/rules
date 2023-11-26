@@ -17,15 +17,6 @@ override_dh_auto_configure:
 	cd ./src; phpize
 	cd ./src; ./configure --enable-snuffleupagus
 
-override_dh_auto_install:
-	dh_testdir
-	dh_testroot
-	dh_installdirs
-	mkdir -p debian/snuffleupagus/$$(/usr/bin/php-config --extension-dir)/
-	mkdir -p debian/snuffleupagus/etc/php/$$(/usr/bin/php-config --version | cut -d '.' -f1-2)/mods-available/
-	install -m 644 src/modules/snuffleupagus.so debian/snuffleupagus/$$(/usr/bin/php-config --extension-dir)/snuffleupagus.so
-	install -m 644 config/snuffleupagus.ini debian/snuffleupagus/etc/php/$$(/usr/bin/php-config --version | cut -d '.' -f1-2)/mods-available/snuffleupagus.ini
-
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	sed -i "s/\$$ext_params -d display_errors=0 -r/-d display_errors=0 -r/" src/run-tests.php
